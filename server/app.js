@@ -1,6 +1,6 @@
 // Biblioteca de 3ros para manejar errores http
 // ES5: var createError = require('http-errors');
-// ES6 
+// ES6 👇
 import createError from 'http-errors';
 // El framework express
 import express from 'express';
@@ -13,6 +13,12 @@ import cookieParser from 'cookie-parser';
 // Biblioteca que registra en consola
 // solicitudes del cliente
 import logger from 'morgan';
+
+// Importando Webbpack middleware
+import webpack from 'webpack'
+import webpackDevMiddleware from 'webpack-dev-middleware'
+import webpackHotMiddleware from 'webpack-hot-middleware'
+import webpackConfig from '../webpack.dev.config'
 
 // Definición de rutas
 import indexRouter from "./routes/index";
@@ -63,7 +69,7 @@ app.use((err, req, res, next) => {
 });
 
 // Exportando la instancia del server "app"
-// ES5 
+// ES5 👇
 // module.exports = app;
-// ES6 
+// ES6 👇
 export default app;
